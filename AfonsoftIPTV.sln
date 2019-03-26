@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfonsoftIPTV", "AfonsoftIPTV\AfonsoftIPTV\AfonsoftIPTV.csproj", "{37A9388B-45BE-4A8A-82E2-63F3934637C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfonsoftIPTV", "AfonsoftIPTV\AfonsoftIPTV\AfonsoftIPTV.csproj", "{37A9388B-45BE-4A8A-82E2-63F3934637C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfonsoftIPTV.Android", "AfonsoftIPTV\AfonsoftIPTV.Android\AfonsoftIPTV.Android.csproj", "{1FD63484-68FF-45D7-8B53-4DE1C86D1705}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfonsoftIPTV.iOS", "AfonsoftIPTV\AfonsoftIPTV.iOS\AfonsoftIPTV.iOS.csproj", "{506E61F3-D930-4136-8E01-443462B6C3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.m3u", "Afonsoft.m3u\Afonsoft.m3u.csproj", "{FD2361E1-3DE2-4B1F-9249-97038AFF010B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afonsoft.m3u", "Afonsoft.m3u\Afonsoft.m3u.csproj", "{FD2361E1-3DE2-4B1F-9249-97038AFF010B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Video", "Afonsoft.Video\Afonsoft.Video.csproj", "{53F14840-F5EA-4F60-B6A5-6A69E2CE2642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afonsoft.Video", "Afonsoft.Video\Afonsoft.Video.csproj", "{53F14840-F5EA-4F60-B6A5-6A69E2CE2642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestM3U", "ConsoleAppTestM3U\ConsoleAppTestM3U.csproj", "{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +159,30 @@ Global
 		{53F14840-F5EA-4F60-B6A5-6A69E2CE2642}.Release|iPhone.Build.0 = Release|Any CPU
 		{53F14840-F5EA-4F60-B6A5-6A69E2CE2642}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{53F14840-F5EA-4F60-B6A5-6A69E2CE2642}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|iPhone.Build.0 = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0AAE38ED-AA63-436B-B391-2B3BABE5EBA0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
