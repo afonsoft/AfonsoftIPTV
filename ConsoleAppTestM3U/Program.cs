@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,28 @@ namespace ConsoleAppTestM3U
     {
         static void Main(string[] args)
         {
-            string caminhoM3U = @"C:\Users\anogueira\Downloads\Lista\LISTA 07-01-19.m3u";
+            string caminhoPath = @"C:\Users\anogueira\Downloads\Lista\";
 
-            M3UFile m3u = new M3UFile(caminhoM3U);
-            
-            if (m3u.Count != 0)
+            string[] files = Directory.GetFiles(caminhoPath, "*.m3u");
+
+
+            IList<M3UFile> m3uFiles = new List<M3UFile>();
+
+            foreach (string file in files)
             {
-                Console.WriteLine($"Total da lista: {m3u.Count}");
+                M3UFile m3u = new M3UFile(file);
+                m3uFiles.Add(m3u);
+                Console.WriteLine($"Arquivo: {file} Total da lista: {m3u.Count}");
+            }
+
+            if (m3uFiles.Count > 0)
+            {
+                int count = 0;
+                foreach (var m3u in m3uFiles)
+                {
+                    m3u.Save(caminhoPath + count + ".m3u");
+                    count++;
+                }
             }
 
             Console.ReadKey();

@@ -11,5 +11,9 @@ namespace Afonsoft.m3u
         public M3UException(string message) : base(message)
         {
         }
+
+        public M3UException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

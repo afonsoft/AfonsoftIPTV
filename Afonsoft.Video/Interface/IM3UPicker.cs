@@ -3,10 +3,8 @@ using System.Threading.Tasks;
 
 namespace Afonsoft.Video.Interface
 {
-    public interface IVideoPicker
+    public interface IM3UPicker
     {
-        Task<string> GetVideoFileAsync();
-        string GetVideoFile();
         M3UFile GetM3UFile();
         Task<M3UFile> GetM3UFileAsync();
     }
