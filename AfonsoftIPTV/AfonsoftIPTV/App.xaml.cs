@@ -23,13 +23,15 @@ namespace AfonsoftIPTV
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/PrismMasterDetailPageIPTV");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<PrismMasterDetailPageIPTV, PrismMasterDetailPageIPTVViewModel>();
+            containerRegistry.RegisterForNavigation<PrismContentPageVideo, PrismContentPageVideoViewModel>();
+            containerRegistry.RegisterForNavigation<PrismTabbedPageList, PrismTabbedPageListViewModel>();
         }
     }
 }
