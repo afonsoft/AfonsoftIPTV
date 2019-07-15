@@ -5,7 +5,7 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="IPTV" />
     </StackLayout>
 
 </ContentPage>

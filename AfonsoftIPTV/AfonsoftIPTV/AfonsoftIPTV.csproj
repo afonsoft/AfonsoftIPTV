@@ -1,17 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Afonsoft.Extensions" Version="2019.7.12" />
+    <PackageReference Include="Afonsoft.M3U" Version="2019.7.12" />
     <PackageReference Include="Prism.Core" Version="7.1.0.431" />
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Afonsoft.m3u\Afonsoft.m3u.csproj" />
   </ItemGroup>
 
 </Project>

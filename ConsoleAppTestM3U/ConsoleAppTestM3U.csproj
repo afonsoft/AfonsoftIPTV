@@ -49,11 +49,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Afonsoft.m3u\Afonsoft.m3u.csproj">
-      <Project>{fd2361e1-3de2-4b1f-9249-97038aff010b}</Project>
-      <Name>Afonsoft.m3u</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
