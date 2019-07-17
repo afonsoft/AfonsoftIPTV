@@ -1,7 +1,7 @@
 ﻿using Afonsoft.m3u;
 using System.Threading.Tasks;
 
-namespace Afonsoft.Video.Interface
+namespace AfonsoftIPTV.Interface
 {
     public interface IM3UPicker
     {

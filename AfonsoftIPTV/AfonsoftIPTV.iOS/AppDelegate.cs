@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using AfonsoftIPTV.Helpers;
+using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -21,6 +22,12 @@ namespace AfonsoftIPTV.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // Rollbar notifier configuartion
+            RollbarHelper.ConfigureRollbarSingleton();
+
+            // Registers for global exception handling.
+            RollbarHelper.RegisterForGlobalExceptionHandling();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
 

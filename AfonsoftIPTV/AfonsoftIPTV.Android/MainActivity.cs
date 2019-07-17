@@ -1,8 +1,11 @@
-﻿using Android.App;
+﻿using AfonsoftIPTV.Helpers;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using Prism;
 using Prism.Ioc;
+using System;
 
 namespace AfonsoftIPTV.Droid
 {
@@ -11,6 +14,18 @@ namespace AfonsoftIPTV.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            // Rollbar notifier configuartion
+            RollbarHelper.ConfigureRollbarSingleton();
+
+            // Registers for global exception handling.
+            RollbarHelper.RegisterForGlobalExceptionHandling();
+
+            AndroidEnvironment.UnhandledExceptionRaiser += (sender, args) =>
+            {
+                var newExc = new ApplicationException("AndroidEnvironment_UnhandledExceptionRaiser", args.Exception);
+                RollbarHelper.RollbarInstance.AsBlockingLogger(TimeSpan.FromSeconds(10)).Critical(newExc);
+            };
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

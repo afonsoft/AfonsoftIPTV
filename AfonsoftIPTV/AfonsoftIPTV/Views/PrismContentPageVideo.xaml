@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="DarkGray"
+             xmlns:controls="clr-namespace:Afonsoft.Video.Controls;assembly=Afonsoft.Video"
              x:Class="AfonsoftIPTV.Views.PrismContentPageVideo">
-  
+    <controls:VideoPlayer x:Name="videoPlayer" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AreTransportControlsEnabled="True"  />
 </ContentPage>

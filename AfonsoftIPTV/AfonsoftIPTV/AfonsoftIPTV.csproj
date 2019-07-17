@@ -7,9 +7,17 @@
   <ItemGroup>
     <PackageReference Include="Afonsoft.Extensions" Version="2019.7.12" />
     <PackageReference Include="Afonsoft.M3U" Version="2019.7.12" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Prism.Core" Version="7.1.0.431" />
+    <PackageReference Include="Rollbar" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Afonsoft.Video\Afonsoft.Video.csproj" />
   </ItemGroup>
 
   <ItemGroup>

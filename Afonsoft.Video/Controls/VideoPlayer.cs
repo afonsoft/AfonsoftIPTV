@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Afonsoft.Video.Interface;
+using Afonsoft.Video;
 using Xamarin.Forms;
 
 namespace Afonsoft.Video.Controls
 {
     public class VideoPlayer : View, IVideoPlayerController
     {
+        public event EventHandler OnCompletion;
         public event EventHandler UpdateStatus;
+        private int indexPlayList;
 
         public VideoPlayer()
         {
@@ -31,13 +33,25 @@ namespace Afonsoft.Video.Controls
 
         // Source property
         public static readonly BindableProperty SourceProperty =
-            BindableProperty.Create(nameof(Source), typeof(VideoSource), typeof(VideoPlayer), null);
+            BindableProperty.Create(nameof(Source), typeof(VideoSource), typeof(VideoPlayer));
 
         [TypeConverter(typeof(VideoSourceConverter))]
         public VideoSource Source
         {
             set => SetValue(SourceProperty, value);
             get => (VideoSource)GetValue(SourceProperty);
+        }
+
+
+        // Source property
+        public static readonly BindableProperty PlayListProperty =
+            BindableProperty.Create(nameof(PlayList), typeof(List<VideoSource>), typeof(VideoPlayer));
+
+        [TypeConverter(typeof(List<VideoSourceConverter>))]
+        public List<VideoSource> PlayList
+        {
+            set => SetValue(PlayListProperty, value);
+            get => (List<VideoSource>)GetValue(PlayListProperty);
         }
 
         // AutoPlay property
@@ -105,6 +119,26 @@ namespace Afonsoft.Video.Controls
         void SetTimeToEnd()
         {
             TimeToEnd = Duration - Position;
+            if (TimeToEnd <= TimeSpan.FromMilliseconds(500) && Duration != TimeSpan.Zero ||
+                (TimeToEnd == Duration && Status == VideoStatus.Paused))
+                OnVideoCompletion(this, EventArgs.Empty);
+        }
+
+        private void OnVideoCompletion(object sender, EventArgs args)
+        {
+            if (PlayList != null && PlayList.Count > 0)
+            {
+                indexPlayList = (indexPlayList + 1) % PlayList.Count;
+                Source = PlayList[indexPlayList];
+                if (AutoPlay)
+                {
+                    Stop();
+                    Play();
+                }
+
+            }
+
+            OnCompletion?.Invoke(sender, args);
         }
 
         // Methods handled by renderers

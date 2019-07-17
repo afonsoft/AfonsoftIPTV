@@ -4,6 +4,7 @@ using AfonsoftIPTV.ViewModels;
 using AfonsoftIPTV.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AfonsoftIPTV.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AfonsoftIPTV
@@ -21,8 +22,8 @@ namespace AfonsoftIPTV
 
         protected override async void OnInitialized()
         {
+            
             InitializeComponent();
-
             await NavigationService.NavigateAsync("NavigationPage/PrismMasterDetailPageIPTV");
         }
 

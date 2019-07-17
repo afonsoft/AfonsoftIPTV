@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Afonsoft.Video.Interface
+namespace Afonsoft.Video
 {
     public interface IVideoPlayerController
     {
