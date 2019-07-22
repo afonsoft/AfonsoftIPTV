@@ -2,7 +2,7 @@
 
 namespace AfonsoftIPTV.Views
 {
-    public partial class PrismTabbedPageList : TabbedPage
+    public partial class PrismTabbedPageList : ContentPage
     {
         public PrismTabbedPageList()
         {

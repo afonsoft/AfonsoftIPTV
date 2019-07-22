@@ -2,25 +2,57 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
                   prism:ViewModelLocator.AutowireViewModel="True"
-                  x:Class="AfonsoftIPTV.Views.PrismMasterDetailPageIPTV">
+                  x:Class="AfonsoftIPTV.Views.PrismMasterDetailPageIPTV"
+                  Title="Afonsoft IPTV">
 
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
-            <StackLayout Padding="20">
-                <!-- TODO: // Update the Layout and add some real menu items  -->
-                <Button Text="ViewA" Command="{Binding NavigateCommand}" CommandParameter="ViewA" />
-            </StackLayout>
-        </ContentPage>
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
-        <ContentPage Padding="10">
-            <ContentPage.Content>
-                <StackLayout>
-                    
-                </StackLayout>
-            </ContentPage.Content>
-        </ContentPage>
-    </MasterDetailPage.Detail>
+        <NavigationPage Title="Menu" 
+                        Icon="ic_hamburger.png">
 
-</MasterDetailPage>
+            <x:Arguments>
+                <ContentPage Title="IPTV">
+
+                    <ListView ItemsSource="{Binding MenuItems}"
+                              SelectedItem="{Binding SelectedMenuItem}"
+                              SeparatorColor="LightGray"
+                              RowHeight="60"
+                              SeparatorVisibility="Default"
+                              BackgroundColor="#e8e8e8">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <!-- Main design for our menu items -->
+                                    <StackLayout VerticalOptions="FillAndExpand"
+                                                 Orientation="Horizontal"
+                                                 Padding="20,10,0,10"
+                                                 Spacing="20">
+
+                                        <Image Source="{Binding Icon}"
+                                               WidthRequest="35"
+                                               HeightRequest="35"
+                                               VerticalOptions="Center" />
+
+                                        <Label Text="{Binding Title}"
+                                               FontSize="Medium"
+                                               VerticalOptions="Center"
+                                               TextColor="Black"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                        <ListView.Behaviors>
+                            <b:EventToCommandBehavior EventName="ItemTapped" 
+                                                      Command="{Binding NavigateCommand}" />
+                        </ListView.Behaviors>
+
+                    </ListView>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Master>
+  </MasterDetailPage>

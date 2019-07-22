@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AfonsoftIPTV.Views.PrismContentPageSettings"
+             Title="Settings">
+    <ContentPage.Content>
+        <!--<ScrollView>-->
+        <TableView Intent="Settings" x:Name="SwiCell" HasUnevenRows="True">
+            <TableRoot>
+                <TableSection Title="Exibir">
+                    <SwitchCell x:Name="SwitchLogo" Text="Logo"/>
+                    <SwitchCell x:Name="SwitchUrl" Text="Url"/>
+                    <SwitchCell x:Name="SwitchFolder" Text="Folder"/>
+                </TableSection>
+                <TableSection Title="Pasta">
+                    <TextCell Text="Pasta Selecionada" Detail="" x:Name="FolderSeleted"/>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                            <!--<Button Text="Selecionar" Clicked="OnButtonSelectClicked" />-->
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="URL">
+                    <TextCell Text="URL" Detail="" x:Name="UrlSeleted"/>
+                    <EntryCell Label="Url" x:Name="LabelURL" Placeholder="" Keyboard="Default" />
+                </TableSection>
+                <TableSection Title="Licença">
+                    <TextCell Text="Licença" x:Name="LicenseID" Detail="ID: "  Tapped="LicenseID_Tapped"/>
+                    <EntryCell Label="Key" x:Name="LabelKey" Placeholder="" Keyboard="Default" />
+                </TableSection>
+                <TableSection Title="">
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                            <!--<Button Text="Salvar" Clicked="OnButtonSalvarClicked" />-->
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <!--</ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>
